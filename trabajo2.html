@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Automatas</title>
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="icons/yoko.png">
+        <!-- Fonts:  'Source Sans Pro' 'Open Sans' 'Cabin' 'Anton'-->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cabin:wght@400;700&family=Open+Sans:wght@300;400;800&family=Source+Sans+Pro:wght@300;400;700;900&display=swap" rel="stylesheet">
+        <!-- Imports -->
+        <link rel="stylesheet" href="css/master.css">
+        <script defer src="js/popup.js"></script>
+        <script defer src="js/operaciones.js"></script>
+    </head>
+    <body>
+        <div class="header">
+            <div class="logo">
+                <img src="icons/yoko.png" alt="Yoko">
+            </div>
+            <h1>A u t &oacute m a t a s</h1>
+            <div class="logo">
+                <img src="icons/eva.svg" alt="Eva">
+            </div>
+            <div class="logo">
+                <img src="icons/arturo.svg" alt="R2D2">
+            </div>
+            <div class="header-right-side">
+                <div class="pasos">
+                    <a href="#alfabeto" class="paso1">
+                        <img src="icons/alfabeto.svg" alt="alfabeto-img" width="25" height="25">
+                        <span>Paso 1</span>
+                    </a>
+                    <a href="#automata" class="paso2">
+                        <img src="icons/automatas.svg" alt="automta-img" width="25" height="25">
+                        <span>Paso 2</span>
+                    </a>
+                    <a href="#etiquetas" class="paso3">
+                        <img src="icons/tag.svg" alt="etiqueta-img" width="25" height="25">
+                        <span>Paso 3</span>
+                    </a>
+                    <a href="#operaciones" class="paso4">
+                        <img src="icons/operations.svg" alt="operaciones-img" width="25" height="25">
+                        <span>Paso 4</span>
+                    </a>
+                </div>
+                <div class="github">
+                    <a href="https://github.com/yowls/automatas1"><img src="icons/github.svg" alt="Github logo icon"></a>
+                </div>
+            </div>
+        </div>
+        <div class="tips">
+                <h3>Introducci&oacuten<br>a la p&aacutegina</h3>
+                <p>Esta aplicación web está destinada al análisis de autómatas, si bien se espera que como usuario ya tenga cierto conocimiento del tema, se ha especificado cada paso a seguir para el correcto ingreso de información. Por favor lea todo atentamente para evitar inconvenientes en el análisis</p>
+        </div>
+        <!-- Paso 1: Alfabeto -->
+        <div id="alfabeto" class="alfabeto">
+            <div class="descripcion">
+                <div class="descripcion-wrapper">
+                    <div class="tittle">
+                        <img src="icons/alfabeto.svg" alt="alfabeto-img" width="50" height="50">
+                        <div class="sub-tittle">
+                            <h2>Paso 1</h2>
+                            <h3>Ingresar Alfabeto</h3>
+                        </div>
+                    </div>
+                    <div class="sub-descripcion">
+                        <ul>
+                            <li>
+                                <span class="tooltip">Ingresar el alfabeto
+                                    <img src="icons/help-white.svg" alt="automata-img" width="15px" height="15px">
+                                    <span class="tooltip-box">El alfabeto será compartido para ambos autómatas, para ello seleccione una cantidad en el espacio indicado, el alfabeto será creado desde a hasta z, un numero superior a esta generará un nuevo elemento combinado aa, ab y hasta zz</span>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="tooltip">Primer elemento es vacio
+                                    <img src="icons/help-white.svg" alt="automata-img" width="15px" height="15px">
+                                    <span class="tooltip-box">La primera posición del Alfabeto es "E", el cual representa las transiciones vacias.</span>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="tooltip">Tamaño m&aacuteximo del alfabeto
+                                    <img src="icons/help-white.svg" alt="automata-img" width="15px" height="15px">
+                                    <span class="tooltip-box">El numero máximo de elementos a ingresar del alfabeto es de 702, luego comenzará a adquirir caracteres erroneos.</span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="formulario">
+                <div class="sub-formulario">
+                    <div class="sub-formulario-header">
+                        <h2>Alfabeto</h2>
+                    </div>
+                    <!-- Ingresar tamaño del alfabeto  -->
+                    <div class="tamano">
+                        <label for="size-alfabeto">Tamaño del alfabeto:</label>
+                        <input type="number" id="size-alfabeto" name="automata" autocomplete="off" value="1" min="1" required>
+                    </div>
+                    <div class="sub-formulario-submit">
+                        <!-- Submit -->
+                        <button type="button" onclick="setAlfabeto()">Enter</button>
+                    </div>
+                </div>
+                <div class="tabla-alfabeto">
+                    <table>
+                        <caption>Tabla</caption>
+                        <th scope="col">Alfabeto</th>
+                        <tbody id="alfabetoTabla"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- Paso 2: Automatas -->
+        <div id="automata" class="automata">
+            <div class="descripcion">
+                <div class="descripcion-wrapper">
+                    <div class="tittle">
+                        <img src="icons/automatas.svg" alt="automata-img" width="50" height="50">
+                        <div class="sub-tittle">
+                            <h2>Paso 2</h2>
+                            <h3>Ingresar Aut&oacutematas</h3>
+                        </div>
+                    </div>
+                    <div class="sub-descripcion">
+                        <ul>
+                            <li>
+                                <span class="tooltip">Los estados del automata
+                                    <img src="icons/help-white.svg" alt="automata-img" width="15px" height="15px">
+                                    <span class="tooltip-box">En el caso del autómata 1 serán q0, q1, q2,…,qn,<br>para el autómata 2 en cambio r0, r1, r2,…,rn.</span>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="tooltip">Selecciona AFD o ANFD
+                                    <img src="icons/help-white.svg" alt="automata-img" width="15px" height="15px">
+                                    <span class="tooltip-box">Seleccione si el automata es AFD o ANFD<br>haciendo click en el boton.</span>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="tooltip">Ingresa las transiciones
+                                    <img src="icons/help-white.svg" alt="automata-img" width="15px" height="15px">
+                                    <span class="tooltip-box">Las transiciones para un AFD será igual al tamaño del alfabeto * la cantidad de estados<br>Para el caso de los ANFD se pueden agregar mas transiciones de forma ilimitada con el boton de añadir dentro del pop-up.</span>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="tooltip">Nombre del automata
+                                    <img src="icons/help-white.svg" alt="automata-img" width="15px" height="15px">
+                                    <span class="tooltip-box">El automata se puede renombrar haciendo doble click al lado de cada icono correspondiente.</span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="formulario">
+                <div class="sub-formulario">
+                    <div class="automata-header">
+                        <img src="icons/robotico.svg" alt="automata-img" width="50" height="50">
+                        <input type="text" id="automataN1" name="" value="Automata1" placeholder="Enter a name" required>
+                    </div>
+                    <div class="automata-body">
+                        <!-- Ingresar cantidad de estados del automata -->
+                        <div class="estados">
+                            <label for="estadosA1">Cantidad de estados:</label>
+                            <input type="number" id="estadosA1" name="automata1" autocomplete="off" value="1" min="1" required>
+                        </div>
+                        <!-- Sea AFD o ANFD -->
+                        <div class="afd-or-anfd">
+                            <label for="afdA1">AFD</label>
+                            <input type="checkbox" id="afdA1" name="automata1">
+                            <label for="afdA1">AFND</label>
+                        </div>
+                    </div>
+                    <div class="automata-submit">
+                        <button type="button" data-popup-target="#popup-a1" onclick="afdAnfd('automata1')">Añadir transiciones de estado</button>
+                        <!-- Muestra el popup para ingresar transiciones -->
+                        <div class="popup popupa1" id="popup-a1">
+                            <div class="popup-header">
+                                <h1>Insertar una transicion de estado</h1>
+                                <button data-close-button class="close-button">&times;</button>
+                            </div>
+                            <div class="popup-body">
+                                <!-- inputs y tabla (area central)-->
+                                <div class="transicion-formulario">
+                                    <div class="transicion-subformulario">
+                                        <div class="subformulario-input">
+                                            <!-- Nombre del automata -->
+                                            <div class="input-automata">Automata: <div id="name-automata1"></div></div>
+                                            <!-- Ingreso transiciones (boton) -->
+                                            <div id="transicion-input1"></div>
+                                        </div>
+                                        <!-- Formulario de ingreso dinamico de transiciones -->
+                                        <div class="sub-transicion" id="sub-transicion1"></div>
+                                    </div>
+                                    <!-- Tabla de estados y alfabeto del automata de ayuda -->
+                                    <div class="automata-tabla">
+                                        <table>
+                                            <caption>Informaci&oacuten</caption>
+                                            <tr>
+                                                <th scope="col">Alfabeto</th>
+                                                <th scope="col">Estados</th>
+                                            </tr>
+                                            <tbody id="automata1-tabla"></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!-- Submit -->
+                                <div class="transicion-submit">
+                                    <button type="button" data-close-button onclick="setTransiciones('automata1')">Finalizar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sub-formulario">
+                    <div class="automata-header">
+                        <img src="icons/robotico.svg" alt="automata-img" width="50" height="50">
+                        <input type="text" id="automataN2" name="" value="Automata2" placeholder="Enter a name" required>
+                    </div>
+                    <div class="automata-body">
+                        <!-- Ingresar cantidad de estados del automata -->
+                        <div class="estados">
+                            <label for="estadosA2">Cantidad de estados:</label>
+                            <input type="number" id="estadosA2" name="automata2" autocomplete="off" value="1" min="1" required>
+                        </div>
+                        <!-- Sea AFD o ANFD -->
+                        <div class="afd-or-anfd">
+                            <label for="afdA2">AFD</label>
+                            <input type="checkbox" id="afdA2" name="automata2">
+                            <label for="afdA2">AFND</label>
+                        </div>
+                    </div>
+                    <div class="automata-submit">
+                        <button type="button" data-popup-target="#popup-a2" onclick="afdAnfd('automata2')">Añadir transiciones de estado</button>
+                        <!-- Muestra el popup para ingresar transiciones -->
+                        <div class="popup popupa2" id="popup-a2">
+                            <div class="popup-header">
+                                <h1>Insertar una transicion de estado</h1>
+                                <button data-close-button class="close-button">&times;</button>
+                            </div>
+                            <div class="popup-body">
+                                <!-- inputs y tabla (area central)-->
+                                <div class="transicion-formulario">
+                                    <div class="transicion-subformulario">
+                                        <div class="subformulario-input">
+                                            <!-- Nombre del automata -->
+                                            <div class="input-automata">Automata: <div id="name-automata2"></div></div>
+                                            <!-- Ingreso transiciones (boton) -->
+                                                <div id="transicion-input2"></div>
+                                        </div>
+                                        <!-- Formulario de ingreso dinamico de transiciones -->
+                                        <div class="sub-transicion" id="sub-transicion2"></div>
+                                    </div>
+                                    <!-- Tabla de estados y alfabeto del automata de ayuda -->
+                                    <div class="automata-tabla">
+                                        <table>
+                                            <caption>Informaci&oacuten</caption>
+                                            <tr>
+                                                <th scope="col">Alfabeto</th>
+                                                <th scope="col">Estados</th>
+                                            </tr>
+                                            <tbody id="automata2-tabla"></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!-- Submit -->
+                                <div class="transicion-submit">
+                                    <button type="button" data-close-button onclick="setTransiciones('automata2')">Finalizar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Paso 3: Etiquetas de Inicio y Termino -->
+        <div id="etiquetas" class="etiquetas">
+            <div class="descripcion">
+                <div class="descripcion-wrapper op">
+                    <div class="tittle">
+                        <img src="icons/tag.svg" alt="automata-img" width="50" height="50">
+                        <div class="sub-tittle">
+                            <h2>Paso 3</h2>
+                            <h3>Ingresar Etiquetas</h3>
+                        </div>
+                    </div>
+                    <div class="sub-descripcion">
+                        <ul>
+                            <li>
+                                <span class="tooltip">Cantidad de estados finales
+                                    <img src="icons/help-black.svg" alt="automata-img" width="15px" height="15px">
+                                    <span class="tooltip-box">El número ingresado determinará la cantidad de estados finales del autómata,no superando la cantidad de estados.</span>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="tooltip">¿Inicial es final?
+                                    <img src="icons/help-black.svg" alt="automata-img" width="15px" height="15px">
+                                    <span class="tooltip-box">Existe la posibilidad de que el estado inicial también pueda ser considerado como un estado final, para esto está la casilla checkbox.</span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="formulario">
+                <div class="sub-formulario">
+                    <h2 class="etiqueta-automata">Automata 1</h2>
+                    <div class="etiqueta-termino">
+                        <span>Cantidad estados finales:</span>
+                        <input type="number" id="etiquetaA1" name="etiqueta" autocomplete="off" value="1" min="1" required>
+                    </div>
+                    <div class="etiqueta-bool">
+                        <label for="">¿Inicial es final?</label>
+                        <input type="checkbox" id="etiquetaB1" name="etiqueta">
+                    </div>
+                    <div class="etiqueta-submit">
+                        <button type="button" name="button" onclick="IngresarEtiquetas('automata1')">Enter</button>
+                    </div>
+                </div>
+                <div class="sub-formulario">
+                    <h2 class="etiqueta-automata">Automata 2</h2>
+                    <div class="etiqueta-termino">
+                        <span>Cantidad estados finales:</span>
+                        <input type="number" id="etiquetaA2" name="etiqueta" autocomplete="off" value="1" min="1" required>
+                    </div>
+                    <div class="etiqueta-bool">
+                        <label for="">¿Inicial es final?</label>
+                        <input type="checkbox" id="etiquetaB2" name="etiqueta">
+                    </div>
+                    <div class="etiqueta-submit">
+                        <button type="button" name="button" onclick="IngresarEtiquetas('automata2')">Enter</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Paso 4: Operaciones -->
+        <div id="operaciones" class="operacion">
+            <div class="descripcion">
+                <div class="descripcion-wrapper op">
+                    <div class="tittle">
+                        <img src="icons/operations.svg" alt="operation-img" width="50" height="50">
+                        <div class="sub-tittle">
+                            <h2>Paso 4</h2>
+                            <h3>Mostrar operaciones</h3>
+                        </div>
+                    </div>
+                    <div class="sub-descripcion">
+                        <ul>
+                            <li>
+                                <span class="tooltip">Simplificar automata
+                                    <img src="icons/help-black.svg" alt="automata-img" width="15px" height="15px">
+                                    <span class="tooltip-box">Si alguno de los autómatas es AFND, antes de simplificarlos se convertirán en AFD.</span>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="tooltip">Automata a partir de operaciones
+                                    <img src="icons/help-black.svg" alt="automata-img" width="15px" height="15px">
+                                    <span class="tooltip-box">Se detallan posibles autómatas resultantes de los dos ingresados: Complemento, Unión, Concatenación e Intersección.</span>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="tooltip">Simplificar los del punto anterior
+                                    <img src="icons/help-black.svg" alt="automata-img" width="15px" height="15px">
+                                    <span class="tooltip-box">Estos son los autómatas convertidos y simplificados.</span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mostar-operacion">
+                <!-- Operacion 1: simplificar automata -->
+                <div class="operacion-menu" id="op1">
+                    <a class="link-menu" href="#op1" onclick="E()">
+                        <em class="op-icon"></em>
+                        <span>Obtener el aut&oacutematas AFD simplificado</span>
+                    </a>
+                    <div class="operacion-submenu">
+                        <div id="simplificar"></div>
+                    </div>
+                </div>
+                <!-- Operacion 2: Automata a partir de operaciones  -->
+                <div class="operacion-menu" id="op2">
+                    <a class="link-menu" href="#op2">
+                        <em class="op-icon"></em>
+                        <span>Obtener el aut&oacutemata a partir de operaciones</span>
+                    </a>
+                    <div class="operacion-submenu">
+                        <div class="calculo">
+                            <button type="button" id="union" onclick="union(estado1,estado2,alfabeto,transicion1,transicion2)">Unión</button>
+                            <button type="button" id="complemento" onclick="complemento(estado1)">Complemento<br>Automata 1</button>
+                            <button type="button" id="complemento" onclick="complemento(estado2)">Complemento<br>Automata 2</button>
+                            <button type="button" id="interseccion" onclick="Concatenacion(estado1,estado2,alfabeto,transicion1,transicion2)">Concatenación</button>
+                            <button type="button" id="concatenacion" onclick="Interseccion(estado1,estado2,alfabeto,transicion1,transicion2)">Intersección</button>
+                        </div>
+                        <div id="mostrar-calculo" class="mostrar-calculos"></div>
+                    </div>
+                </div>
+                <!-- Operacion 3: Simplificar los del punto anterior -->
+                <div class="operacion-menu" id="op3">
+                    <a class="link-menu" href="#op3">
+                        <em class="op-icon"></em>
+                        <span>Pasar los aut&oacutematas a AFD y simplificarlos</span>
+                    </a>
+                    <div class="operacion-submenu">
+                        <div class="calculo">
+                            <button type="button" id="union" onclick="unionC(estado1,estado2,alfabeto,transicion1,transicion2)">Unión</button>
+                            <button type="button" id="complemento" onclick="complementoC1(estado1)">Complemento<br>Automata 1</button>
+                            <button type="button" id="complemento" onclick="complementoC2(estado2)">Complemento<br>Automata 2</button>
+                            <button type="button" id="interseccion" onclick="ConcatenacionC(estado1,estado2,alfabeto,transicion1,transicion2)">Concatenación</button>
+                            <button type="button" id="concatenacion" onclick="InterseccionC(estado1,estado2,alfabeto,transicion1,transicion2)">Intersección</button>
+                        </div>
+                        <div id="mostrar-calculoC" class="mostrar-calculos"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

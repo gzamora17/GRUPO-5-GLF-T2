@@ -1,0 +1,120 @@
+.header {
+    background: var(--header-bg);
+    color: var(--white-fg);
+    height: 5vw;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 10;
+}
+.header h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+}
+.logo {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+}
+.logo img {
+    width: 4vw;
+    height: 4vw;
+    margin-right: 10px;
+}
+
+
+.header-right-side, .github,
+.pasos, .paso1, .paso2, .paso3, .paso4 {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.pasos a {
+    padding: 0 10px;
+}
+
+
+.paso1 img, .paso2 img, .paso3 img, .paso4 img {
+    padding-right: 10px;
+}
+.paso1 span, .paso2 span, .paso3 span, .paso4 span {
+    margin-right: 20px;
+    font-family: 'Cabin', sans-serif;
+    font-weight: bold;
+}
+
+.paso1 {
+    background: var(--alfabeto-bg);
+    color: var(--white-fg);
+    position: relative;
+}
+.paso1::before {
+    border-bottom: 5.1vw solid var(--alfabeto-bg);
+}
+.paso2 {
+    background: var(--automata-bg);
+    color: var(--white-fg);
+    position: relative;
+}
+.paso2::before {
+    border-bottom: 5.1vw solid var(--automata-bg);
+}
+.paso3 {
+    background: var(--etiquetas-bg);
+    color: var(--black-fg);
+    position: relative;
+}
+.paso3::before {
+    border-bottom: 5.1vw solid var(--etiquetas-bg);
+}
+.paso4 {
+    background: var(--operacion-bg);
+    color: var(--black-fg);
+    position: relative;
+}
+.paso4::before {
+    border-bottom: 5.1vw solid var(--operacion-bg);
+}
+.paso1::before, .paso2::before, .paso3::before, .paso4::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -1px;
+    left: -1.9vw;
+    border-left: 2vw solid transparent;
+}
+
+.github {
+    background: var(--yellow);
+    width: 7vw;
+}
+.github img {
+    width: 3vw;
+    padding-left: 2vw;
+}
+
+
+.tips {
+    background-color: var(--yellow);
+    color: var(--black-fg);
+    display: flex;
+    height: var(--introduction-height);
+    width: 100%;
+    padding-top: 8%;
+}
+.tips h3 {
+    width: 33vw;
+    padding: 0px 2vw 0px 7vw;
+    font-family: 'Anton', sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+.tips p {
+    margin-right: 6vw;
+    font-size: 1.5em;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: lighter;
+}

@@ -1,0 +1,35 @@
+.etiquetas {
+    background-color: var(--etiquetas-bg);
+    color: var(--black-fg);
+    display: flex;
+    height: var(--etiquetas-height);
+    font-family: "Robot Condensed", sans-serif;
+    font-weight: 300;
+    overflow: auto;
+}
+
+.etiqueta-automata {
+    margin-top: 20%;
+    font-size: 1.5em;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+}
+.etiqueta-termino input {
+    background: var(--white-fg);
+    color: var(--black-fg);
+    text-align: center;
+    border: none;
+    height: 30px;
+    width: 50px;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+.etiqueta-termino, .etiqueta-bool {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: normal;
+    font-size: 1em;
+}
+.etiqueta-termino, .etiqueta-bool, .etiqueta-submit{
+    margin-top: 20px;
+}

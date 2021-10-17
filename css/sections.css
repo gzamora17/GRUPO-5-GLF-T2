@@ -1,0 +1,49 @@
+.descripcion {
+    width: 30%;
+    position: relative;
+    z-index: 9;
+}
+.descripcion-wrapper {
+    height: 60%;
+    transform: translate(0%, 30%);
+    border-right: 2px solid rgba(255,255,255,0.3);
+}
+
+.tittle {
+    display: flex;
+    justify-content: center;
+}
+.tittle img {
+    margin-top: 10px;
+    margin-right: 20px;
+}
+.sub-tittle {
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+    font-size: 1.2rem;
+}
+.sub-descripcion {
+    margin-left: 6vw;
+    padding: 20px 30px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: .8em;
+}
+
+.formulario {
+    width: 70%;
+    height: 90%;
+    display: flex;
+    justify-content: space-around;
+    transform: translate(0%, 10%);
+}
+.sub-formulario button[type="button"] {
+    background: var(--white-fg);
+    color: var(--black-fg);
+    padding: 7px 14px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: normal;
+    font-size: 1em;
+}

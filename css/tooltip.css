@@ -1,0 +1,37 @@
+.sub-descripcion li {
+    list-style-type: disc;
+    padding: 10px 0px;
+}
+
+.tooltip {
+    position: relative;
+    font-weight: bold;
+    align-items: center;
+}
+
+.tooltip:hover .tooltip-box {
+    display: inline-block;
+}
+
+.tooltip-box {
+    display: none;
+    position: absolute;
+    background-color: var(--header-bg);
+    color: var(--white-fg);
+    padding: 10px;
+    border-radius: 4px;
+    bottom: 35px;
+    left: 115px;
+    width: 400px;
+    height: 70px;
+}
+.tooltip-box::after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-top: 10px solid var(--header-bg);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    bottom: -10px;
+    left: 5px;
+}

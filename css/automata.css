@@ -1,0 +1,86 @@
+.automata {
+    background-color: var(--automata-bg);
+    color: var(--white-fg);
+    display: flex;
+    height: var(--automatas-height);
+    font-family: "Robot Condensed", sans-serif;
+    font-weight: 300;
+}
+.automata-header {
+    margin-top: 5%;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.automata-header input {
+    background-color: var(--automata-bg);
+    color: var(--white-fg);
+    border: none;
+    margin-left: 10px;
+    width: 50%;
+    font-size: 2em;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+}
+.automata-body{
+    margin-top: 20px;
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: normal;
+    font-size: 1em;
+}
+.estados input {
+    background: var(--white-fg);
+    color: var(--black-fg);
+    text-align: center;
+    border: none;
+    height: 30px;
+    width: 50px;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+.afd-or-anfd {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 10vw;
+}
+.afd-or-anfd input[type="checkbox"] {
+    -webkit-appearance: none;
+    position: relative;
+    width: 60px;
+    height: 30px;
+    border-radius: 20px;
+    outline: none;
+    transition: 0.5s;
+    background-color: var(--yellow);
+    cursor: pointer;
+}
+.afd-or-anfd input:checked[type="checkbox"] {
+    background-color: var(--yellow);
+}
+.afd-or-anfd input[type="checkbox"]:before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    top: 0;
+    left: 0;
+    background-color: var(--white-fg);
+    transform: scale(1.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,.2);
+    transition: 0.5s;
+}
+.afd-or-anfd input:checked[type="checkbox"]:before {
+    left: 30px;
+}
+
+.automata-submit {
+    transform: translate(0%, 100%);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}

@@ -1,0 +1,83 @@
+.popup {
+    position: fixed;
+    border-radius: 10px;
+    padding: 20px 30px;
+    transform: translate(-30%, -70%) scale(0);
+    transition: 200ms ease-in-out;
+    background-color: var(--header-bg);
+    color: var(--white-fg);
+    z-index: 99;
+    width: 800px;
+    /* max-width: 100%; */
+}
+.popupa1.active {
+    transform: translate(0%, -70%) scale(1);
+    pointer-events: all;
+}
+.popupa2.active {
+    transform: translate(-54%, -70%) scale(1);
+    pointer-events: all;
+}
+
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+.popup-header button {
+    background-color: var(--red);
+    color: var(--white-fg);
+    font-weight: bold;
+    font-size: 1.75rem;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+}
+
+.popup-body {
+    font-family: 'Source Sans Pro', sans-serif;
+    display:flex;
+    flex-direction: column;
+}
+
+.transicion-formulario {
+    display:flex;
+    justify-content: space-between;
+    /* width: 450px; */
+    padding-bottom: 30px;
+}
+
+.transicion-formulario input {
+    width: 100%;
+    height: 50%;
+    color: var(--white-fg);
+    background: var(--header-bg);
+    border: none;
+    border-bottom: 2px solid var(--white-fg);
+}
+.input-automata {
+    display: flex;
+    font-weight: bold;
+}
+#transicion-input1, #transicion-input2 {
+    text-align: left;
+}
+#name-automata1, #name-automata2 {
+    padding-left: 10px;
+}
+#sub-transicion1, #sub-transicion2 , .automata-tabla{
+    width: 380px;
+    height: 245px;
+    overflow: auto;
+    padding: 10px;
+}
+.automata-tabla {
+    margin-top: 10px;
+}

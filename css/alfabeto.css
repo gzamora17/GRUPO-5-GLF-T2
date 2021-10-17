@@ -1,0 +1,62 @@
+.alfabeto {
+    background-color: var(--alfabeto-bg);
+    color: var(--white-fg);
+    display: flex;
+    height: var(--alfabeto-height);
+    overflow: auto;
+}
+.sub-formulario-header {
+    font-size: 1.35em;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+}
+
+.tamano {
+    margin: 30px 0px;
+    font-weight: normal;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.tamano input {
+    background: var(--white-fg);
+    color: var(--black-fg);
+    height: 30px;
+    width: 50px;
+    border: none;
+    text-align: center;
+    border-radius: 5px;
+}
+.sub-formulario-header {
+    margin-top: 15%;
+}
+.tabla-alfabeto {
+    margin-top: 25px;
+}
+.tabla-alfabeto {
+    height: 90%;
+}
+.tabla-alfabeto table, .tabla-alfabeto caption {
+    text-align: center;
+    min-width: 160px;
+}
+
+table {
+    width: 100%;
+    background: var(--white-fg);
+    color: var(--black-fg);
+    font-family: 'Source Sans Pro', sans-serif;
+}
+caption {
+    background: var(--black-fg);
+    color: var(--white-fg);
+    padding: 10px 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+td, th {
+    padding: 8px;
+    border-bottom: 1px solid white;
+}
+tr:nth-child(even){
+    background: var(--black-fg);
+    color: var(--white-fg);
+}

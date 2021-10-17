@@ -1,0 +1,33 @@
+/* Load config*/
+@import "colors.css";
+@import "header.css";
+@import "sections.css";
+@import "tooltip.css";
+@import "popup.css";
+@import "alfabeto.css";
+@import "automata.css";
+@import "etiqueta.css";
+@import "operations.css";
+
+/*Sections Sizes*/
+:root {
+  --introduction-height:	15vw;
+  --alfabeto-height:		30vw;
+  --automatas-height:		35vw;
+  --etiquetas-height:		35vw;
+  --operaciones-height:		50vw;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-size: 2em 2em;
+    background-color: var(--operacion-bg);
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    text-decoration: none;
+}
